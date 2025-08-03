@@ -3,7 +3,7 @@ import greetings
 from utilities import utilities
 import requests
 from requests import Response
-
+from math import isclose
 
 def main() -> None:
 
@@ -24,9 +24,21 @@ def main() -> None:
     # this adds two integers using the add function from utilities module
     print(utilities.add(a, b))
 
-    website: str = 'https://www.indently.io/abc'  # this is a string variable containing a URL
-    response: Response = get_response(website)  # this gets the response from the URL
+    # this is a string variable containing a URL
+    website: str = 'https://www.indently.io/abc'
+    # this gets the response from the URL
+    response: Response = get_response(website)
     show_response(response)  # this shows the response details
+
+    # this is a dictionary containing user names and their ages
+    users: dict = {'Alice': 25, 'Bob': 30, 'Norm': 29}
+    if users:
+        for user in users:
+            print(f'User: {user}, Age: {users[user]}')
+    else:
+        print('Nor users were found')
+
+    print(comparing_floats(0.1 + 0.2, 0.3))  # this compares two floats for equality
 
 
 def get_response(url: str) -> Response:
@@ -41,6 +53,10 @@ def show_response(response: Response) -> None:
     print('Encoding: ', response.encoding)
     print('Is redirect: ', response.is_redirect)
     print('Is perminate redirect: ', response.is_permanent_redirect)
+
+
+def comparing_floats(a: float, b: float) -> bool:
+    return isclose(a, b, rel_tol=.001)  # this compares two floats for equality
 
 
 if __name__ == '__main__':

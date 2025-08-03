@@ -33,5 +33,4 @@ while True:
         sys.exit()
     
     bot_response = get_response(user_input)
-    print(f'Bot: {bot_response}')
-    
+    print(f'Bot: {bot_response}')    

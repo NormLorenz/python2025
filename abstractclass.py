@@ -33,7 +33,7 @@ class Microwave(Appliance):
     #     print(f'{self.brand} microwave model {self.version} is now OFF.')
 
     def turn_off(self) -> None:
-        raise NotImplementedError("This method is not implemented yet.")
+        raise NotImplementedError("This method is not implemented yet.") 
 
 
 def main() -> None:

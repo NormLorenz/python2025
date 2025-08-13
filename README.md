@@ -50,3 +50,6 @@ This project demonstrates basic Python scripting and data manipulation using pan
 2. Run `main.py` to see basic Python output:
    ```sh
    python
+
+# A good Video
+https://www.youtube.com/watch?v=DsYIdMmI5-Q&t=15s

@@ -2,10 +2,7 @@ from difflib import get_close_matches
 
 
 def get_best_match(user_question: str, knowledge: dict) -> str | None:
-    # This function takes the user's question and compares it to all questions in the knowledge base.
-    # It uses difflib.get_close_matches to find the most similar question based on string similarity.
-    # If a close enough match is found (similarity cutoff of 0.6), it returns the best match.
-    # If no sufficiently similar question is found, it returns None.
+    """This code defines a function to find the best match for a user's question from a knowledge base using string matching."""
     questions: list[str] = [q for q in knowledge]
     matches: list[str] = get_close_matches(
         user_question, questions, n=1, cutoff=0.6)
@@ -16,7 +13,13 @@ def get_best_match(user_question: str, knowledge: dict) -> str | None:
     return None
 
 
+def add(a: int, b: int) -> int:
+    """This code defines a simple function to add two numbers."""
+    return a + b
+
+
 def run_chatbot(knowledge: dict) -> None:
+    """This code defines a function to find the best match for a user's question from a knowledge base using string"""
     while True:
         user_input: str = input('You: ')
         if user_input.lower() == 'exit':
@@ -25,6 +28,7 @@ def run_chatbot(knowledge: dict) -> None:
 
         best_match: str | None = get_best_match(user_input, knowledge)
         response: str | None = knowledge.get(best_match)
+        result: int = add(2, 3)  # Example usage of the add function
 
         if response:
             print(f'Bot: {response}')

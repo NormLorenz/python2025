@@ -1,0 +1,14 @@
+from timeit import timeit, repeat
+
+
+a: str = 'list(range(1000))'
+b: str = 'set(range(1000))'
+
+a_time = timeit(stmt=a, number=10000)
+b_time = timeit(stmt=b, number=10000)
+
+print(f'List creation time: {a_time:.6f} seconds')
+print(f'Set creation time: {b_time:.6f} seconds')
+
+print(f'Set is {b_time / a_time:.2f} times faster than list creation.')
+print('Timing comparison complete.')
